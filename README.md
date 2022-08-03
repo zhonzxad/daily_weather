@@ -44,3 +44,6 @@ Just clone this repository then open in XCode. It should run directly with "Star
     = Clean up the local remote branch.
 
 > [Github Cli](https://cli.github.com/) might help.
+
+## develop information
+- id:zhonzxad/company mail:zhangxuan.best
