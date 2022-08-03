@@ -21,3 +21,26 @@ Several notes for contributor:
 - Do not use storyboard as it often cause some merge issues. Instead, draw the UI by code.
   (A non-storyboard project framework has been set in the main branch).
 - Discuss Friendly! Feel please to suggest any improvements or ideas.
+
+## How to deploy for development
+
+Just clone this repository then open in XCode. It should run directly with "Start the active scheme" (Triangle in the upper left corner).
+
+## Branch Rebase Workflow
+
+1. `git clone ${repository_url}` = Clone this repository.
+2. `git branch ${dev_branch_name} && git push -u origin ${dev_branch_name}`
+   = Create a development branch.
+3. `git checkout ${dev_branch_name}` = Commit your change in this branch, such as bug fix
+   or new feature.
+4. `git checkout main && git pull` = Update main branch.
+5. `git checkout ${dev_branch_name} && git rebase main` = Start rebase.
+6. Hand conflict in the temp branch.
+7. `git rebase --continue` = Continue, till all conflicts are handled.
+8. `git push` = Update commits to remote.
+9.  Initiating a Pull Request, add labels for this PR, invite several reviewer.
+   After **rebase** (not squash) these change to main branch, delete the development branch.
+11. `git branch -d ${dev_branch_name} && git remote prune origin`
+    = Clean up the local remote branch.
+
+> [Github Cli](https://cli.github.com/) might help.
